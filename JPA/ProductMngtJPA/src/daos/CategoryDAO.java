@@ -15,12 +15,14 @@ public class CategoryDAO {
 		String jpql = "SELECT c FROM Category c"; // Category is Entity object (is not Table in RDBMS)
 		TypedQuery<Category> query = em.createQuery(jpql, Category.class);
 		List<Category> cats = query.getResultList();
+		em.close();
 		return cats;
 	}
 
 	public static Category getDetails(int id) {
 		EntityManager em = JpaUtil.getEntityManager();
 		Category cat = em.find(Category.class, id); // return null if object is not found
+		em.close();
 		return cat;
 	}
 
@@ -30,6 +32,7 @@ public class CategoryDAO {
 		TypedQuery<Category> query = em.createQuery(jpql, Category.class);
 		query.setParameter("keyword", "%" + keyword + "%");
 		List<Category> cats = query.getResultList();
+		em.close();
 		return cats;
 	}
 
@@ -44,6 +47,7 @@ public class CategoryDAO {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
+		em.close();
 		return result;
 	}
 
@@ -58,6 +62,7 @@ public class CategoryDAO {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
+		em.close();
 		return result;
 	}
 
@@ -75,6 +80,7 @@ public class CategoryDAO {
 				ex.printStackTrace();
 			}
 		}
+		em.close();
 		return result;
 	}
 
@@ -92,6 +98,7 @@ public class CategoryDAO {
 				ex.printStackTrace();
 			}
 		}
+		em.close();
 		return result;
 	}
 

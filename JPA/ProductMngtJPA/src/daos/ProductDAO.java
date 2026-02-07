@@ -15,12 +15,14 @@ public class ProductDAO {
 		String jpql = "SELECT p FROM Product p";
 		TypedQuery<Product> query = em.createQuery(jpql, Product.class);
 		List<Product> prods = query.getResultList();
+		em.close();
 		return prods;
 	}
 
 	public static Product getDetails(int id) {
 		EntityManager em = JpaUtil.getEntityManager();
 		Product prod = em.find(Product.class, id);
+		em.close();
 		return prod;
 	}
 
@@ -30,6 +32,7 @@ public class ProductDAO {
 		TypedQuery<Product> query = em.createQuery(jpql, Product.class);
 		query.setParameter("keyword", "%" + keyword + "%");
 		List<Product> prods = query.getResultList();
+		em.close();
 		return prods;
 	}
 
@@ -44,6 +47,7 @@ public class ProductDAO {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
+		em.close();
 		return result;
 	}
 
@@ -61,6 +65,7 @@ public class ProductDAO {
 				ex.printStackTrace();
 			}
 		}
+		em.close();
 		return result;
 	}
 
@@ -78,6 +83,7 @@ public class ProductDAO {
 				ex.printStackTrace();
 			}
 		}
+		em.close();
 		return result;
 	}
 
