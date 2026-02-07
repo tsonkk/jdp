@@ -1,3 +1,8 @@
+/* 
+ * Menu Help >> Eclipse Marketplace... >> Search and install the 'WindowBuilder Current' plugin
+ * Right-click project >> New >> Other >> WindowBuilder >> Swing Designer >> JFrame
+ */
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
