@@ -24,7 +24,8 @@ public class CategoryDAO {
 			Category cat = new Category(id, name);
 			cats.add(cat);
 		}
-		con.close();
+		rs.close();
+		st.close();
 		return cats;
 	}
 
@@ -39,7 +40,8 @@ public class CategoryDAO {
 			String name = rs.getString("Name");
 			cat = new Category(id, name);
 		}
-		con.close();
+		rs.close();
+		pst.close();
 		return cat;
 	}
 
@@ -56,7 +58,8 @@ public class CategoryDAO {
 			Category cat = new Category(id, name);
 			cats.add(cat);
 		}
-		con.close();
+		rs.close();
+		pst.close();
 		return cats;
 	}
 
@@ -68,7 +71,7 @@ public class CategoryDAO {
 		pst.setString(1, newCat.name);
 		int rows = pst.executeUpdate();
 		if (rows > 0) result = true;
-		con.close();
+		pst.close();
 		return result;
 	}
 
@@ -85,8 +88,9 @@ public class CategoryDAO {
 				int id = rs.getInt(1);
 				result = id;
 			}
+			rs.close();
 		}
-		con.close();
+		pst.close();
 		return result;
 	}
 
@@ -99,7 +103,7 @@ public class CategoryDAO {
 		pst.setInt(2, newCat.id);
 		int rows = pst.executeUpdate();
 		if (rows > 0) result = true;
-		con.close();
+		pst.close();
 		return result;
 	}
 
@@ -111,7 +115,7 @@ public class CategoryDAO {
 		pst.setInt(1, id);
 		int rows = pst.executeUpdate();
 		if (rows > 0) result = true;
-		con.close();
+		pst.close();
 		return result;
 	}
 

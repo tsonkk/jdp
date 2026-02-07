@@ -1,21 +1,28 @@
 package utils;
 
+import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.util.Properties;
 
 public class JdbcUtil {
-
+	
 	private static Connection con = null;
-
+	
 	public static Connection getConnection() throws Exception {
 		if (con == null || con.isClosed()) {
-			// for MySQL 8.0
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://db40322.public.databaseasp.net:3306/db40322", "db40322", "Y-e5@8BqP_t4");
-			
-			// for SQL Server 2025
-			//Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-			//con = DriverManager.getConnection("jdbc:sqlserver://db40321.public.databaseasp.net;databaseName=db40321;TrustServerCertificate=True", "db40321", "o!6Q+9RgM%k5");
+			// get db_properties
+			Properties props = new Properties();
+			FileInputStream fis = new FileInputStream("config/db.properties");
+			props.load(fis);
+			String driver = props.getProperty("db.driver");
+			String url = props.getProperty("db.url");
+			String user = props.getProperty("db.user");
+			String pwd = props.getProperty("db.pwd");
+			fis.close();
+			// get db_connection
+			Class.forName(driver);
+			con = DriverManager.getConnection(url, user, pwd);
 		}
 		return con;
 	}

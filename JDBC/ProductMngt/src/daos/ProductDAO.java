@@ -26,7 +26,8 @@ public class ProductDAO {
 			Product prod = new Product(id, name, price, catID);
 			prods.add(prod);
 		}
-		con.close();
+		rs.close();
+		st.close();
 		return prods;
 	}
 
@@ -43,7 +44,8 @@ public class ProductDAO {
 			int catID = rs.getInt("CatID");
 			prod = new Product(id, name, price, catID);
 		}
-		con.close();
+		rs.close();
+		pst.close();
 		return prod;
 	}
 
@@ -61,7 +63,8 @@ public class ProductDAO {
 			Product prod = new Product(id, name, price, catID);
 			prods.add(prod);
 		}
-		con.close();
+		rs.close();
+		pst.close();
 		return prods;
 	}
 
@@ -80,7 +83,8 @@ public class ProductDAO {
 			Product prod = new Product(id, name, price, catID);
 			prods.add(prod);
 		}
-		con.close();
+		rs.close();
+		pst.close();
 		return prods;
 	}
 
@@ -94,7 +98,7 @@ public class ProductDAO {
 		pst.setInt(3, newProd.catID);
 		int rows = pst.executeUpdate();
 		if (rows > 0) result = true;
-		con.close();
+		pst.close();
 		return result;
 	}
 
@@ -109,7 +113,7 @@ public class ProductDAO {
 		pst.setInt(4, newProd.id);
 		int rows = pst.executeUpdate();
 		if (rows > 0) result = true;
-		con.close();
+		pst.close();
 		return result;
 	}
 
@@ -121,7 +125,7 @@ public class ProductDAO {
 		pst.setInt(1, id);
 		int rows = pst.executeUpdate();
 		if (rows > 0) result = true;
-		con.close();
+		pst.close();
 		return result;
 	}
 
