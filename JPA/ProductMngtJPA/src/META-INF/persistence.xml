@@ -13,13 +13,13 @@
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://db40322.public.databaseasp.net:3306/db40322"/>
             <property name="jakarta.persistence.jdbc.user" value="db40322"/>
-            <property name="jakarta.persistence.jdbc.password" value="Y-e5@8BqP_t4"/>
+            <property name="jakarta.persistence.jdbc.password" value="***"/>
             <!-- SQL Server 2025 -->
             <!-- <property name="eclipselink.target-database" value="SQLServer"/>
             <property name="jakarta.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:sqlserver://db40321.public.databaseasp.net;databaseName=db40321;TrustServerCertificate=True"/>
             <property name="jakarta.persistence.jdbc.user" value="db40321"/>
-            <property name="jakarta.persistence.jdbc.password" value="o!6Q+9RgM%k5"/> -->
+            <property name="jakarta.persistence.jdbc.password" value="***"/> -->
         </properties>
     </persistence-unit>
 </persistence>
