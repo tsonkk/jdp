@@ -3,8 +3,6 @@
  * Right-click project >> New >> Other >> WindowBuilder >> Swing Designer >> JFrame
  */
 
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
@@ -26,7 +24,7 @@ import java.awt.event.ActionEvent;
 
 public class RegistrationForm extends JFrame {
 	private static final long serialVersionUID = 1L;
-	
+
 	private JPanel contentPane;
 	private JTextField tfName;
 	private JLabel lblFavorite;
@@ -48,16 +46,8 @@ public class RegistrationForm extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					RegistrationForm frame = new RegistrationForm();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+		RegistrationForm frame = new RegistrationForm();
+		frame.setVisible(true);
 	}
 
 	/**
@@ -73,12 +63,12 @@ public class RegistrationForm extends JFrame {
 		contentPane.setBorder(new EmptyBorder(10, 10, 10, 10)); // margin
 		setContentPane(contentPane);
 		GridBagLayout gbl_contentPane = new GridBagLayout();
-		gbl_contentPane.columnWidths = new int[]{100, 300};
-		gbl_contentPane.rowHeights = new int[]{30, 30, 30, 50, 30};
-		gbl_contentPane.columnWeights = new double[]{0.0, 1.0};
-		gbl_contentPane.rowWeights = new double[]{0.0, 0.0, 0.0, 1.0};
+		gbl_contentPane.columnWidths = new int[] { 100, 300 };
+		gbl_contentPane.rowHeights = new int[] { 30, 30, 30, 50, 30 };
+		gbl_contentPane.columnWeights = new double[] { 0.0, 1.0 };
+		gbl_contentPane.rowWeights = new double[] { 0.0, 0.0, 0.0, 1.0 };
 		contentPane.setLayout(gbl_contentPane);
-		
+
 		JLabel lblName = new JLabel("Name:");
 		GridBagConstraints gbc_lblName = new GridBagConstraints();
 		gbc_lblName.insets = new Insets(0, 0, 5, 5);
@@ -86,7 +76,7 @@ public class RegistrationForm extends JFrame {
 		gbc_lblName.gridx = 0;
 		gbc_lblName.gridy = 0;
 		contentPane.add(lblName, gbc_lblName);
-		
+
 		tfName = new JTextField();
 		GridBagConstraints gbc_tfName = new GridBagConstraints();
 		gbc_tfName.insets = new Insets(0, 0, 5, 0);
@@ -94,7 +84,7 @@ public class RegistrationForm extends JFrame {
 		gbc_tfName.gridx = 1;
 		gbc_tfName.gridy = 0;
 		contentPane.add(tfName, gbc_tfName);
-		
+
 		lblFavorite = new JLabel("Favorite sports:");
 		lblFavorite.setVerticalAlignment(SwingConstants.TOP);
 		GridBagConstraints gbc_lblFavorite = new GridBagConstraints();
@@ -103,7 +93,7 @@ public class RegistrationForm extends JFrame {
 		gbc_lblFavorite.gridx = 0;
 		gbc_lblFavorite.gridy = 1;
 		contentPane.add(lblFavorite, gbc_lblFavorite);
-		
+
 		pnlFavorite = new JPanel();
 		GridBagConstraints gbc_pnlFavorite = new GridBagConstraints();
 		gbc_pnlFavorite.insets = new Insets(0, 0, 5, 0);
@@ -112,16 +102,16 @@ public class RegistrationForm extends JFrame {
 		gbc_pnlFavorite.gridy = 1;
 		contentPane.add(pnlFavorite, gbc_pnlFavorite);
 		pnlFavorite.setLayout(new GridLayout(0, 1, 0, 0));
-		
+
 		ckbCricket = new JCheckBox("Cricket");
 		pnlFavorite.add(ckbCricket);
-		
+
 		ckbBadminton = new JCheckBox("Badminton");
 		pnlFavorite.add(ckbBadminton);
-		
+
 		ckbGolf = new JCheckBox("Golf");
 		pnlFavorite.add(ckbGolf);
-		
+
 		lblGender = new JLabel("Gender:");
 		lblGender.setVerticalAlignment(SwingConstants.TOP);
 		GridBagConstraints gbc_lblGender = new GridBagConstraints();
@@ -130,7 +120,7 @@ public class RegistrationForm extends JFrame {
 		gbc_lblGender.gridx = 0;
 		gbc_lblGender.gridy = 2;
 		contentPane.add(lblGender, gbc_lblGender);
-		
+
 		pnlGender = new JPanel();
 		GridBagConstraints gbc_pnlGender = new GridBagConstraints();
 		gbc_pnlGender.insets = new Insets(0, 0, 5, 0);
@@ -139,15 +129,15 @@ public class RegistrationForm extends JFrame {
 		gbc_pnlGender.gridy = 2;
 		contentPane.add(pnlGender, gbc_pnlGender);
 		pnlGender.setLayout(new GridLayout(0, 1, 0, 0));
-		
+
 		rdbMale = new JRadioButton("Male");
 		bgGender.add(rdbMale);
 		pnlGender.add(rdbMale);
-		
+
 		rdbFemale = new JRadioButton("Female");
 		bgGender.add(rdbFemale);
 		pnlGender.add(rdbFemale);
-		
+
 		lblComments = new JLabel("Comments:");
 		GridBagConstraints gbc_lblComments = new GridBagConstraints();
 		gbc_lblComments.fill = GridBagConstraints.BOTH;
@@ -155,7 +145,7 @@ public class RegistrationForm extends JFrame {
 		gbc_lblComments.gridx = 0;
 		gbc_lblComments.gridy = 3;
 		contentPane.add(lblComments, gbc_lblComments);
-		
+
 		taComments = new JTextArea();
 		taComments.setLineWrap(true);
 		GridBagConstraints gbc_taComments = new GridBagConstraints();
@@ -164,7 +154,7 @@ public class RegistrationForm extends JFrame {
 		gbc_taComments.gridx = 1;
 		gbc_taComments.gridy = 3;
 		contentPane.add(taComments, gbc_taComments);
-		
+
 		btnSubmit = new JButton("Submit");
 		btnSubmit.addActionListener(new ActionListener() {
 			@Override
@@ -178,7 +168,7 @@ public class RegistrationForm extends JFrame {
 		gbc_btnSubmit.gridx = 0;
 		gbc_btnSubmit.gridy = 4;
 		contentPane.add(btnSubmit, gbc_btnSubmit);
-		
+
 		btnReset = new JButton("Reset");
 		btnReset.addActionListener(new ActionListener() {
 			@Override
@@ -192,7 +182,7 @@ public class RegistrationForm extends JFrame {
 		gbc_btnReset.gridy = 4;
 		contentPane.add(btnReset, gbc_btnReset);
 	}
-	
+
 	private void btnSubmitClicked() {
 		String name = tfName.getText();
 		String sports = "";
@@ -215,7 +205,7 @@ public class RegistrationForm extends JFrame {
 		String message = "Name: " + name + "\nFavorite sports: " + sports.toString().trim() + "\nGender: " + gender + "\nComments: " + comments;
 		JOptionPane.showMessageDialog(this, message, "Registration Info", JOptionPane.INFORMATION_MESSAGE);
 	}
-	
+
 	private void btnResetClicked() {
 		tfName.setText("");
 		ckbCricket.setSelected(false);
@@ -224,4 +214,5 @@ public class RegistrationForm extends JFrame {
 		bgGender.clearSelection();
 		taComments.setText("");
 	}
+
 }
