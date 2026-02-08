@@ -1,2 +1,0 @@
-MySQL: https://www.monsterasp.net
-MSSQL: https://www.monsterasp.net
