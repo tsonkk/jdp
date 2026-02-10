@@ -48,7 +48,7 @@
             <th>Products</th>
           </tr>
           <c:forEach var="cat" items="${cats}">
-            <tr onclick="details(${cat.id}, '${cat.name}')">
+            <tr onclick="details(${cat.id}, '${cat.name}')" style="cursor: pointer">
               <td>${cat.id}</td>
               <td>${cat.name}</td>
               <td><a href="ProductServlet?action=list&catID=${cat.id}">show</a></td>

@@ -49,7 +49,7 @@
             <th>Age</th>
           </tr>
           <c:forEach var="cust" items="${custs}">
-            <tr onclick="details(${cust.id}, '${cust.name}', ${cust.age})">
+            <tr onclick="details(${cust.id}, '${cust.name}', ${cust.age})" style="cursor: pointer">
               <td>${cust.id}</td>
               <td>${cust.name}</td>
               <td>${cust.age}</td>

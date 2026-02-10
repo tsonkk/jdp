@@ -55,7 +55,7 @@
             <th>Category</th>
           </tr>
           <c:forEach var="prod" items="${prods}">
-            <tr onclick="details(${prod.id}, '${prod.name}', ${prod.price})">
+            <tr onclick="details(${prod.id}, '${prod.name}', ${prod.price})" style="cursor: pointer">
               <td>${prod.id}</td>
               <td>${prod.name}</td>
               <td>${prod.price}</td>
