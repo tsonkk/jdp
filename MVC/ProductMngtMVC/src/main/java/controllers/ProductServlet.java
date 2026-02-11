@@ -8,9 +8,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-import daos.CategoryDAO;
 import daos.ProductDAO;
-import entities.Category;
 import entities.Product;
 
 @WebServlet("/ProductServlet")
@@ -37,7 +35,7 @@ public class ProductServlet extends HttpServlet {
 			int price = Integer.parseInt(request.getParameter("txtPrice"));
 			int catID = Integer.parseInt(request.getParameter("catID"));
 			Product newProd = new Product(id, name, price, catID);
-			boolean result = ProductDAO.insert(newProd);
+			ProductDAO.insert(newProd);
 			response.sendRedirect("?action=list&catID=" + catID);
 		}
 		// action=update
@@ -47,14 +45,14 @@ public class ProductServlet extends HttpServlet {
 			int price = Integer.parseInt(request.getParameter("txtPrice"));
 			int catID = Integer.parseInt(request.getParameter("catID"));
 			Product newProd = new Product(id, name, price, catID);
-			boolean result = ProductDAO.update(newProd);
+			ProductDAO.update(newProd);
 			response.sendRedirect("?action=list&catID=" + catID);
 		}
 		// action=delete
 		else if ("delete".equalsIgnoreCase(action)) {
 			int id = Integer.parseInt(request.getParameter("txtID"));
 			int catID = Integer.parseInt(request.getParameter("catID"));
-			boolean result = ProductDAO.delete(id);
+			ProductDAO.delete(id);
 			response.sendRedirect("?action=list&catID=" + catID);
 		}
 	}

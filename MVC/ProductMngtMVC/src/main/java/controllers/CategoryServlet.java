@@ -32,7 +32,7 @@ public class CategoryServlet extends HttpServlet {
 			int id = Integer.parseInt(request.getParameter("txtID"));
 			String name = request.getParameter("txtName");
 			Category newCat = new Category(id, name);
-			boolean result = CategoryDAO.insert(newCat);
+			CategoryDAO.insert(newCat);
 			response.sendRedirect("?action=list");
 		}
 		// action=update
@@ -40,13 +40,13 @@ public class CategoryServlet extends HttpServlet {
 			int id = Integer.parseInt(request.getParameter("txtID"));
 			String name = request.getParameter("txtName");
 			Category newCat = new Category(id, name);
-			boolean result = CategoryDAO.update(newCat);
+			CategoryDAO.update(newCat);
 			response.sendRedirect("?action=list");
 		}
 		// action=delete
 		else if ("delete".equalsIgnoreCase(action)) {
 			int id = Integer.parseInt(request.getParameter("txtID"));
-			boolean result = CategoryDAO.delete(id);
+			CategoryDAO.delete(id);
 			response.sendRedirect("?action=list");
 		}
 	}

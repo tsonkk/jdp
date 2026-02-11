@@ -34,7 +34,7 @@ public class CustomerServlet extends HttpServlet {
 			String name = request.getParameter("txtName");
 			int age = Integer.parseInt(request.getParameter("txtAge"));
 			Customer newCust = new Customer(id, name, age);
-			boolean result = CustomerDAO.insert(newCust);
+			CustomerDAO.insert(newCust);
 			response.sendRedirect("?action=list");
 		}
 		// action=update
@@ -43,13 +43,13 @@ public class CustomerServlet extends HttpServlet {
 			String name = request.getParameter("txtName");
 			int age = Integer.parseInt(request.getParameter("txtAge"));
 			Customer newCust = new Customer(id, name, age);
-			boolean result = CustomerDAO.update(newCust);
+			CustomerDAO.update(newCust);
 			response.sendRedirect("?action=list");
 		}
 		// action=delete
 		else if ("delete".equalsIgnoreCase(action)) {
 			int id = Integer.parseInt(request.getParameter("txtID"));
-			boolean result = CustomerDAO.delete(id);
+			CustomerDAO.delete(id);
 			response.sendRedirect("?action=list");
 		}
 	}
