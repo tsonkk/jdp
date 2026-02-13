@@ -1,0 +1,21 @@
+1. Prerequisites:
+- create WAR file: right-click project >> Export >> WAR file >> xxx.war
+- create dockerfile:
+FROM tomcat:11-jdk21
+COPY xxx.war /usr/local/tomcat/webapps/ROOT.war
+EXPOSE 8080
+--------------
+2. github.com:
+- push xxx.war and dockerfile to your GitHub
+--------------
+3. render.com:
+- new Web Service >> Public Git Repository:
+ + Language: Docker
+ + Instance Type: Free
+>> Your service is live: https://xxx.onrender.com
+--------------
+4. uptimerobot.com:
+- new Single Monitor:
+ + Monitor type: HTTP / website monitoring
+ + URL to monitor: https://xxx.onrender.com
+ + Monitor interval: 10 minutes
