@@ -1,0 +1,4 @@
+MySQL: https://dev.mysql.com/downloads/connector/j/
+MSSQL: https://learn.microsoft.com/en-us/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server
+Jakarta Standard Tag Library API: https://mvnrepository.com/artifact/jakarta.servlet.jsp.jstl/jakarta.servlet.jsp.jstl-api
+Jakarta Standard Tag Library Implementation: https://mvnrepository.com/artifact/org.glassfish.web/jakarta.servlet.jsp.jstl
