@@ -19,7 +19,6 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import java.awt.GridBagConstraints;
-import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -31,61 +30,30 @@ import javax.swing.JTable;
 public class CustomerForm extends JFrame {
 	private static final long serialVersionUID = 1L;
 
-	private JPanel contentPane;
 	private JTextField tfID;
 	private JButton btnAdd;
-	private JLabel lblName;
 	private JTextField tfName;
 	private JButton btnUpdate;
-	private JLabel lblAge;
 	private JTextField tfAge;
 	private JButton btnDelete;
 	private JTable tblCustomer;
 	private GenericTableModel<Customer> modelCustomer;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		CustomerForm frame = new CustomerForm();
-		frame.setVisible(true);
-		frame.loadCustomerTable();
-	}
-
-	/**
-	 * Create the frame.
-	 */
 	public CustomerForm() {
-		setTitle("CustomerForm");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setSize(450, 250);
-		setLocationRelativeTo(null); // center-screen
-		contentPane = new JPanel();
+		JPanel contentPane = (JPanel) this.getContentPane();
 		contentPane.setBorder(new EmptyBorder(10, 10, 10, 10));
-		setContentPane(contentPane);
-		GridBagLayout gbl_contentPane = new GridBagLayout();
-		gbl_contentPane.columnWidths = new int[] { 50, 0, 50 };
-		gbl_contentPane.rowHeights = new int[] { 30, 30, 30, 0 };
-		gbl_contentPane.columnWeights = new double[] { 0.0, 1.0, 0.0 };
-		gbl_contentPane.rowWeights = new double[] { 0.0, 0.0, 0.0, 1.0 };
-		contentPane.setLayout(gbl_contentPane);
+		contentPane.setLayout(new GridBagLayout());
+		GridBagConstraints gbc = new GridBagConstraints();
+		gbc.fill = GridBagConstraints.BOTH;
 
-		JLabel lblID = new JLabel("ID");
-		GridBagConstraints gbc_lblID = new GridBagConstraints();
-		gbc_lblID.anchor = GridBagConstraints.EAST;
-		gbc_lblID.insets = new Insets(0, 0, 5, 5);
-		gbc_lblID.gridx = 0;
-		gbc_lblID.gridy = 0;
-		contentPane.add(lblID, gbc_lblID);
+		gbc.gridx = 0;
+		gbc.gridy = 0;
+		contentPane.add(new JLabel("ID"), gbc);
 
-		tfID = new JTextField();
-		GridBagConstraints gbc_tfID = new GridBagConstraints();
-		gbc_tfID.insets = new Insets(0, 0, 5, 5);
-		gbc_tfID.fill = GridBagConstraints.HORIZONTAL;
-		gbc_tfID.gridx = 1;
-		gbc_tfID.gridy = 0;
-		contentPane.add(tfID, gbc_tfID);
-		tfID.setColumns(10);
+		tfID = new JTextField(20);
+		gbc.gridx = 1;
+		gbc.gridy = 0;
+		contentPane.add(tfID, gbc);
 
 		btnAdd = new JButton("ADD");
 		btnAdd.addActionListener(new ActionListener() {
@@ -94,29 +62,18 @@ public class CustomerForm extends JFrame {
 				btnAddClicked();
 			}
 		});
-		GridBagConstraints gbc_btnAdd = new GridBagConstraints();
-		gbc_btnAdd.fill = GridBagConstraints.BOTH;
-		gbc_btnAdd.insets = new Insets(0, 0, 5, 0);
-		gbc_btnAdd.gridx = 2;
-		gbc_btnAdd.gridy = 0;
-		contentPane.add(btnAdd, gbc_btnAdd);
+		gbc.gridx = 2;
+		gbc.gridy = 0;
+		contentPane.add(btnAdd, gbc);
 
-		lblName = new JLabel("NAME");
-		GridBagConstraints gbc_lblName = new GridBagConstraints();
-		gbc_lblName.anchor = GridBagConstraints.EAST;
-		gbc_lblName.insets = new Insets(0, 0, 5, 5);
-		gbc_lblName.gridx = 0;
-		gbc_lblName.gridy = 1;
-		contentPane.add(lblName, gbc_lblName);
+		gbc.gridx = 0;
+		gbc.gridy = 1;
+		contentPane.add(new JLabel("NAME"), gbc);
 
-		tfName = new JTextField();
-		GridBagConstraints gbc_tfName = new GridBagConstraints();
-		gbc_tfName.insets = new Insets(0, 0, 5, 5);
-		gbc_tfName.fill = GridBagConstraints.HORIZONTAL;
-		gbc_tfName.gridx = 1;
-		gbc_tfName.gridy = 1;
-		contentPane.add(tfName, gbc_tfName);
-		tfName.setColumns(10);
+		tfName = new JTextField(20);
+		gbc.gridx = 1;
+		gbc.gridy = 1;
+		contentPane.add(tfName, gbc);
 
 		btnUpdate = new JButton("UPDATE");
 		btnUpdate.addActionListener(new ActionListener() {
@@ -125,29 +82,18 @@ public class CustomerForm extends JFrame {
 				btnUpdateClicked();
 			}
 		});
-		GridBagConstraints gbc_btnUpdate = new GridBagConstraints();
-		gbc_btnUpdate.fill = GridBagConstraints.BOTH;
-		gbc_btnUpdate.insets = new Insets(0, 0, 5, 0);
-		gbc_btnUpdate.gridx = 2;
-		gbc_btnUpdate.gridy = 1;
-		contentPane.add(btnUpdate, gbc_btnUpdate);
+		gbc.gridx = 2;
+		gbc.gridy = 1;
+		contentPane.add(btnUpdate, gbc);
 
-		lblAge = new JLabel("AGE");
-		GridBagConstraints gbc_lblAge = new GridBagConstraints();
-		gbc_lblAge.anchor = GridBagConstraints.EAST;
-		gbc_lblAge.insets = new Insets(0, 0, 5, 5);
-		gbc_lblAge.gridx = 0;
-		gbc_lblAge.gridy = 2;
-		contentPane.add(lblAge, gbc_lblAge);
+		gbc.gridx = 0;
+		gbc.gridy = 2;
+		contentPane.add(new JLabel("AGE"), gbc);
 
-		tfAge = new JTextField();
-		GridBagConstraints gbc_tfAge = new GridBagConstraints();
-		gbc_tfAge.insets = new Insets(0, 0, 5, 5);
-		gbc_tfAge.fill = GridBagConstraints.HORIZONTAL;
-		gbc_tfAge.gridx = 1;
-		gbc_tfAge.gridy = 2;
-		contentPane.add(tfAge, gbc_tfAge);
-		tfAge.setColumns(10);
+		tfAge = new JTextField(20);
+		gbc.gridx = 1;
+		gbc.gridy = 2;
+		contentPane.add(tfAge, gbc);
 
 		btnDelete = new JButton("DELETE");
 		btnDelete.addActionListener(new ActionListener() {
@@ -156,12 +102,9 @@ public class CustomerForm extends JFrame {
 				btnDeleteClicked();
 			}
 		});
-		GridBagConstraints gbc_btnDelete = new GridBagConstraints();
-		gbc_btnDelete.fill = GridBagConstraints.BOTH;
-		gbc_btnDelete.insets = new Insets(0, 0, 5, 0);
-		gbc_btnDelete.gridx = 2;
-		gbc_btnDelete.gridy = 2;
-		contentPane.add(btnDelete, gbc_btnDelete);
+		gbc.gridx = 2;
+		gbc.gridy = 2;
+		contentPane.add(btnDelete, gbc);
 
 		tblCustomer = new JTable();
 		tblCustomer.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
@@ -171,12 +114,11 @@ public class CustomerForm extends JFrame {
 			}
 		});
 		JScrollPane scpCustomer = new JScrollPane(tblCustomer);
-		GridBagConstraints gbc_scpCustomer = new GridBagConstraints();
-		gbc_scpCustomer.gridwidth = 3;
-		gbc_scpCustomer.fill = GridBagConstraints.BOTH;
-		gbc_scpCustomer.gridx = 0;
-		gbc_scpCustomer.gridy = 3;
-		contentPane.add(scpCustomer, gbc_scpCustomer);
+		scpCustomer.setPreferredSize(new java.awt.Dimension(300, 100));
+		gbc.gridx = 0;
+		gbc.gridy = 3;
+		gbc.gridwidth = 3;
+		contentPane.add(scpCustomer, gbc);
 	}
 
 	private void loadCustomerTable() {
@@ -247,6 +189,17 @@ public class CustomerForm extends JFrame {
 				ex.printStackTrace();
 			}
 		}
+	}
+
+	public static void main(String[] args) {
+		CustomerForm frame = new CustomerForm();
+		frame.pack();
+		frame.setTitle("CustomerForm");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setResizable(false);
+		frame.setLocationRelativeTo(null); // center-screen
+		frame.setVisible(true);
+		frame.loadCustomerTable();
 	}
 
 }
