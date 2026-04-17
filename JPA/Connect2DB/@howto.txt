@@ -1,0 +1,11 @@
+persistence.xml:
+ + add JPA framework: Hibernate, EclipseLink, ...
+ + add JDBC driver: MySQL, MSSQL, ...
+ + create Entity classes
+------
+steps:
+ + b1. create EntityManagerFactory and EntityManager
+ + b2. create Query
+ + b3. execute Query >> ResultList
+ + b4. process ResultList
+ + b5. close EntityManager and EntityManagerFactory
