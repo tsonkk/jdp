@@ -1,0 +1,9 @@
+0. prerequisites:
+  + add JDBC driver: MySQL, MSSQL, ...
+  + create Entity classes
+  + add JPA framework: Hibernate, EclipseLink, ... >> META-INF/persistence.xml
+1. create EntityManagerFactory and EntityManager
+2. create Query
+3. execute Query >> ResultList
+4. process ResultList
+5. close EntityManager and EntityManagerFactory
