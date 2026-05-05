@@ -25,6 +25,16 @@ public class ProductDAO {
 		em.close();
 		return prod;
 	}
+	
+	public static List<Product> getByCatID(int catID) {
+		EntityManager em = JpaUtil.getEntityManager();
+		String jpql = "SELECT p FROM Product p WHERE p.category.id = :catID";
+		TypedQuery<Product> query = em.createQuery(jpql, Product.class);
+		query.setParameter("catID", catID);
+		List<Product> prods = query.getResultList();
+		em.close();
+		return prods;
+	}
 
 	public static List<Product> search(String keyword) {
 		EntityManager em = JpaUtil.getEntityManager();

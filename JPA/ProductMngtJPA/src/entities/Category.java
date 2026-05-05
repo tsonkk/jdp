@@ -32,5 +32,13 @@ public class Category {
 		this.id = id;
 		this.name = name;
 	}
+	
+	//getters
+	public int getId() {
+		return this.id;
+	}
+	public String getName() {
+		return this.name;
+	}
 
 }

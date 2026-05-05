@@ -17,5 +17,16 @@ public class Product {
 		this.price = price;
 		this.catID = catID;
 	}
+	
+	//getters
+	public int getId() {
+		return this.id;
+	}
+	public String getName() {
+		return this.name;
+	}
+	public int getPrice() {
+		return this.price;
+	}
 
 }
