@@ -1,0 +1,2 @@
+New project: Static Web Project
+Target runtime: HTTP Preview

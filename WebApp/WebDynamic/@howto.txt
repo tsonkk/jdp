@@ -1,0 +1,2 @@
+New project: Dynamic Web Project
+Target runtime: Apache Tomcat v11.0
