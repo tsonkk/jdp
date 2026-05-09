@@ -36,7 +36,7 @@
                 <input type="submit" formaction="?action=add" value="ADD" />
                 <input type="submit" formaction="?action=update" value="UPDATE" />
                 <input type="submit" formaction="?action=delete" value="DELETE" onclick="return confirm('ARE YOU SURE?')" />
-               </td>
+              </td>
             </tr>
           </table>
         </form>

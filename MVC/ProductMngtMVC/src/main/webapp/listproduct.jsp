@@ -42,7 +42,7 @@
                 <input type="submit" formaction="?action=update&catID=${param.catID}" value="UPDATE" />
                 <input type="submit" formaction="?action=delete&catID=${param.catID}" value="DELETE" onclick="return confirm('ARE YOU SURE?')" />
                 <input type="button" onclick="window.location.href='CategoryServlet?action=list'" value="BACK" />
-               </td>
+              </td>
             </tr>
           </table>
         </form>
