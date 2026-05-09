@@ -49,14 +49,18 @@
             <th>ID</th>
             <th>Name</th>
             <th>No.Products</th>
-            <th></th>
+            <th>Action</th>
           </tr>
           <c:forEach var="cat" items="${cats}">
             <tr onclick="details(${cat.id}, '${cat.name}')" style="cursor: pointer">
               <td>${cat.id}</td>
               <td>${cat.name}</td>
               <td>${cat.products.size()}</td>
-              <td><a href="ProductServlet?action=list&catID=${cat.id}">view</a></td>
+              <td>
+                <c:if test="${cat.products.size() > 0}">
+                  <a href="ProductServlet?action=list&catID=${cat.id}">view</a>
+                </c:if>
+              </td>
             </tr>
           </c:forEach>
         </table>
