@@ -40,5 +40,8 @@ public class Category {
 	public String getName() {
 		return this.name;
 	}
+	public List<Product> getProducts() {
+		return this.products;
+	}
 
 }

@@ -50,7 +50,7 @@
     </tr>
     <tr>
       <td>
-        <table style="width:100%" border="1">
+        <table style="width:100%; text-align:center" border="1">
           <tr>
             <th>ID</th>
             <th>Name</th>

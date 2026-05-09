@@ -44,17 +44,19 @@
     </tr>
     <tr>
       <td>
-        <table style="width:100%" border="1">
+        <table style="width:100%; text-align:center" border="1">
           <tr>
             <th>ID</th>
             <th>Name</th>
-            <th>Products</th>
+            <th>No.Products</th>
+            <th></th>
           </tr>
           <c:forEach var="cat" items="${cats}">
             <tr onclick="details(${cat.id}, '${cat.name}')" style="cursor: pointer">
               <td>${cat.id}</td>
               <td>${cat.name}</td>
-              <td><a href="ProductServlet?action=list&catID=${cat.id}">show</a></td>
+              <td>${cat.products.size()}</td>
+              <td><a href="ProductServlet?action=list&catID=${cat.id}">view</a></td>
             </tr>
           </c:forEach>
         </table>
