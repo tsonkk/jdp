@@ -13,6 +13,9 @@
 <body>
   <table>
     <tr>
+      <td>Hello <b>${sessionScope.admin.username}</b> | <a href="AdminServlet?action=logout">Logout</a></td>
+    </tr>
+    <tr>
       <td>
         <h2 align="center">PRODUCT LIST</h2>
       </td>

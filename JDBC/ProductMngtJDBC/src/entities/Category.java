@@ -14,7 +14,7 @@ public class Category {
 		this.name = name;
 	}
 	
-	//getters
+	// getters
 	public int getId() {
 		return this.id;
 	}

@@ -39,7 +39,7 @@ public class Product {
 		this.category = CategoryDAO.getDetails(catID);
 	}
 	
-	//getters
+	// getters
 	public int getId() {
 		return this.id;
 	}

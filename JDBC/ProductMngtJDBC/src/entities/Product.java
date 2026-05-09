@@ -18,7 +18,7 @@ public class Product {
 		this.catID = catID;
 	}
 	
-	//getters
+	// getters
 	public int getId() {
 		return this.id;
 	}
